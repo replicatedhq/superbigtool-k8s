@@ -1,0 +1,19 @@
+{{if ConfigOptionEquals "embedded_postgres" "true" }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  labels:
+    app: superbigtool
+    tier: postgres
+spec:
+  type: ClusterIP
+  ports:
+  - name: svcmain
+    port: 5432
+    targetPort: 5432
+  selector:
+    app: superbigtool
+    tier: postgres
+{{end}}
