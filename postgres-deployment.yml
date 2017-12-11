@@ -1,4 +1,3 @@
-{{if ConfigOptionEquals "embedded_postgres" "true" }}
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -30,4 +29,3 @@ spec:
                 secretKeyRef:
                   name: postgres
                   key: POSTGRES_PASSWORD
-{{end}}
